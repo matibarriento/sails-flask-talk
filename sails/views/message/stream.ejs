@@ -1,0 +1,35 @@
+<script type="text/javascript" src="/js/dependencies/sails.io.js"></script>
+<script type="text/javascript">
+ io.socket.get('/message', function responseFromServer (message, response) {
+ 
+ 	for (var i = 0; i < message.length; i++) {
+ 		document.getElementById("messages").innerHTML += "<li>" + message[i].name + "</li> <br>";
+ 	}
+
+ });
+
+ io.socket.on('message', function onServerSentEvent (message) {
+      switch(message.verb) {
+
+        case 'created':
+          document.getElementById("messages").innerHTML += "<li>" + message.data.name + "</li> <br>";
+
+          break;
+
+        default: return;
+      }
+  });
+</script>
+
+<h2>IT Floss!</h2>
+<h3>Invocando: curl -X POST --data 'name=Un nuevo mensaje' http://localhost:1337/message</h3>
+
+<div id="messages"></div>
+
+<button onclick="clearValues()">Click me</button>
+
+<script>
+function clearValues() {
+ 	document.getElementById("messages").innerHTML = "";
+}
+</script>
