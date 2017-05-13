@@ -1,9 +1,9 @@
 <body>
     <ul>
-           <% _.each(users, function (user) { %>
-    <li><%= user.name %></li>
-    <% }) %>
-    </ul>
+
+    <% users.forEach(function(user) { %>
+        <li><%= user.name %></li>
+    <% }); %>
 
 
     <h1> <%= title %></h1>

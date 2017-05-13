@@ -27,21 +27,5 @@ module.exports = {
 		return res.json({
 			fullName: params.name + ' ' + params.lastName
 		});
-	},
-	postPerson: function(req, res) {
-
-		var persona = req.params.all()
-
-		Persona.create({
-			name: persona.name
-		}).exec(function createCB(err, created) {
-			return res.ok();
-		});
-
-	},
-	getPerson: function(req, res) {
-		Persona.find().exec(function(err, persona) {
-			return res.json(persona);
-		});
 	}
 };

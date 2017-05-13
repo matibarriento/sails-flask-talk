@@ -1,0 +1,14 @@
+<ul>
+
+	<% personas.forEach(function(persona) { %>
+	    <li><%= persona.name + ' ' + persona.lastName %></li>
+	<% }); %>
+
+</ul>
+<div>
+    <% if(audience.enjoy_talk()){ %>
+    	APLAUSOS
+	<% } else{ %>  
+	    CALLESE HOMBRE HORRIBLE!
+	<% } %>
+</div>
