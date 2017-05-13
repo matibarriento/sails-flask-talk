@@ -7,7 +7,7 @@
 
 module.exports = {
 	add: function(req, res) {
-		var persona = req.params.all()
+		var persona = req.params.all();
 
 		Persona.create({
 			name: persona.name,

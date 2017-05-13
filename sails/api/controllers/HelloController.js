@@ -7,7 +7,7 @@
 
 module.exports = {
 	hello: function(req, res) {
-		var params = req.params.all()
+		var params = req.params.all();
 
 		if (params.name)
 			return res.ok('Hello ' + params.name + '!');
