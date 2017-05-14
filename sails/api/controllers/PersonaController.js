@@ -23,7 +23,16 @@ module.exports = {
 	},
 	getAllView: function(req, res) {
 		Persona.find().exec(function(err, personas) {
-			return res.view('persona/index', { personas:  personas } );
+			return res.view('persona/index', {
+				personas: personas
+			});
+		});
+	},
+	getOneView: function(req, res) {
+		Persona.find().exec(function(err, personas) {
+			return res.view('persona/one', {
+				Persona: personas[0]
+			});
 		});
 	}
 };

@@ -35,6 +35,7 @@ module.exports.routes = {
   // '/': {
   //   view: 'homepage'
   // },
+  'POST /accion/v2/post': 'ExamplesController.postName',
   'GET /' : 'HelloController.hello',
   '/login' : 'HelloController.login'
 

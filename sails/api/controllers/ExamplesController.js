@@ -6,9 +6,9 @@
  */
 
 module.exports = {
-	getJson: function(req, res) {
+	anyVerb: function(req, res) {
 		return res.json({
-			name: "Ejemplo"
+			fullName: 'LISA JUNIOR'
 		});
 	},
 	getView: function(req, res) {
@@ -22,7 +22,7 @@ module.exports = {
 			return res.notFound();
 		}
 
-		var params = req.params.all()
+		var params = req.params.all();
 
 		return res.json({
 			fullName: params.name + ' ' + params.lastName
