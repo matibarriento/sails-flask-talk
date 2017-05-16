@@ -10,7 +10,7 @@ module.exports = {
 		var params = req.params.all();
 
 		if (params.name)
-			return res.ok('Hello ' + params.name + '!');
+			return res.ok('Hello, ' + params.name + '!');
 
 		return res.ok('Hello, World!');
 	},
